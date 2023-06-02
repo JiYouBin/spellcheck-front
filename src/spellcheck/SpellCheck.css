@@ -1,0 +1,291 @@
+/* 폰트 */
+@font-face {
+    font-family: 'NanumSquareNeo-Variable';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'KCC-Ganpan';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/KCC-Ganpan.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 버튼 서체 */
+@font-face {
+    font-family: 'TTWanjunuricheR';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/TTWanjunuricheR.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+#my-container {
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* 클리어 */
+.spell_check_container::after,
+.input-text::after,
+.title-container::after,
+.title-box::after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+
+/* 맞춤법 검사기 타이틀 */
+.title_circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #F4205F;
+
+    box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.5);
+
+    background-image: url(./spell-icon_3.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80%;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+}
+
+/* 배경 전체 */
+.spell_check_container {
+    background-color: #FFF4F4;
+    background-image: url(./bg-spell1.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 937px;
+    padding: 0px 200px;
+    position: relative;
+}
+
+.front-bg {
+    background-image: url(./bg-spell2.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 101%;
+    position: absolute;
+    bottom: -2%;
+    left: 0%;
+    width: 100%;
+    height: 200px;
+    z-index: 5;
+}
+
+/* 사용 박스 */
+.spellcheck-box {
+    width: 80%;
+    padding: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.spellcheck-box::after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+/* 넘어가는 아이콘 */
+.next {
+    float: left;
+    width: 10%;
+    height: 554px;
+    line-height: 554px;
+    text-align: center;
+}
+
+.next svg {
+    font-size: 60px;
+    color: #F4205F;
+    margin: -15px;
+}
+
+.original_text,
+.Result_text {
+    float: left;
+}
+
+.original_text,
+.Result_text {
+    top: 10px;
+    width: 45%;
+    border: 3px solid #F4205F;
+    background-color: #FFFFFF;
+    border-radius: 0 0 20px 20px;
+}
+
+.input-text {
+    margin: 50px;
+}
+
+.input-text-box,
+.Result_text2 {
+    font-family: 'NanumSquareNeo-Variable';
+    width: 100%;
+    height: 300px;
+    border: none;
+    outline: none;
+    border: 1px solid #FF7D95;
+    border-radius: 10px;
+    font-size: 15px;
+    padding: 15px;
+    margin-bottom: 20px;
+    overflow: auto;
+    resize: none;
+}
+
+.input-text-box:focus {
+    background-color: #FFF4F4;
+}
+
+.input-text-box::placeholder {
+    color: #FF7D95;
+}
+
+/* 맞춤법 검사기 버튼 */
+.btn {
+    font-family: 'TTWanjunuricheR';
+    font-weight: bold;
+    text-align: center;
+    font-size: 1em;
+    color: #FFFFFF;
+    border: none;
+    background-color: #F4205F;
+    width: 150px;
+    padding: 10px 0px;
+    border-radius: 60px;
+    cursor: pointer;
+    float: right;
+    z-index: 10;
+}
+
+.check-icon {
+    vertical-align: middle;
+    font-size: 1.8em;
+    margin: 0px -5px;
+
+}
+
+.copy-btn {
+    font-family: 'TTWanjunuricheR';
+    font-weight: bold;
+    text-align: center;
+    font-size: 1em;
+    color: #F4205F;
+    background-color: white;
+    border: 3px solid #F4205F;
+    width: 150px;
+    padding: 10px 0px;
+    border-radius: 60px;
+    cursor: pointer;
+    float: right;
+    transition: all .1s ease;
+    z-index: 10;
+}
+
+.copy-icon {
+    vertical-align: middle;
+    font-size: 1.3em;
+}
+
+.copy-btn:hover {
+    background-color: #F4205F;
+    color: white;
+    box-shadow: 0px 0px 5px 1px #F4205F;
+}
+
+/* --------------------------- 원고지모양 박스 만들기 --------------------------- */
+
+/* 전체 감싸는 박스 */
+.title-container {
+    border-bottom: 3px solid #F4205F;
+    background-color: #FF7D95;
+    padding: 10px 0px;
+}
+
+.title-box {
+    border-top: 3px solid #F4205F;
+    border-bottom: 3px solid #F4205F;
+}
+
+.box1 {
+    width: calc(100%/10);
+    height: 50px;
+    line-height: 50px;
+    float: left;
+    border-right: 3px solid #F4205F;
+    background-color: white;
+    font-family: 'KCC-Ganpan';
+    text-align: center;
+    font-size: 28px;
+    color: rgb(50, 50, 50);
+}
+
+.box1:last-child {
+    border: none;
+}
+
+/* 복사 완료 */
+.swal2-title {
+    font-family: 'NanumSquareNeo-Variable';
+    font-weight: 300;
+    font-size: 25px;
+    color: black;
+    padding: 0px;
+}
+
+.swal2-actions {
+    display: none !important;
+}
+
+/* 복사완료 체크 링 */
+.swal2-icon.swal2-success .swal2-success-ring {
+    position: absolute;
+    z-index: 2;
+    top: -0.25em;
+    left: -0.25em;
+    box-sizing: content-box;
+    width: 100%;
+    height: 100%;
+    border: 0.25em solid rgba(244, 32, 95, .3);
+    border-radius: 50%;
+}
+
+.swal2-icon.swal2-success {
+    border-color: #F4205F;
+    color: #F4205F;
+}
+
+.swal2-icon.swal2-success [class^=swal2-success-line] {
+    display: block;
+    position: absolute;
+    z-index: 2;
+    height: 0.3125em;
+    border-radius: 0.125em;
+    background-color: #F4205F;
+}
+
+.swal2-icon.swal2-success [class^=swal2-success-line] {
+    display: block;
+    position: absolute;
+    z-index: 2;
+    height: 0.3125em;
+    border-radius: 0.125em;
+    background-color: #F4205F;
+}
