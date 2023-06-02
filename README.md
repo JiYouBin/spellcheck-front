@@ -1,3 +1,6 @@
+# 맞춤법 검사기 라이브러리 사용
+# Node환경에서 라이브러리 설치 통해서 사용 가능
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
